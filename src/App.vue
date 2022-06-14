@@ -35,6 +35,7 @@ export default {
 
 </script>
 <style  lang="less">
+
 * {
   margin: 0;
   padding: 0;
@@ -58,10 +59,9 @@ html {
     #app {
       width: 100%;
       height: 100%;
-      padding: 0 .2rem;
+      // padding: 0 .2rem;
       box-sizing: border-box;
-      overflow-x: hidden;
-      overflow-y: auto;
+      overflow: hidden;
 
 
 

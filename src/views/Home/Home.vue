@@ -43,6 +43,20 @@
     <div class="red_packet ">
       <img src="img/red_packet.PNG" alt="">
     </div>
+    <div class="grid">
+      <div class="grid_div_1">
+        <img src="" alt="">
+        <span></span>
+      </div>
+      <div class="grid_div_2">
+        <img src="" alt="">
+        <span></span>
+      </div>
+      <div class="grid_div_3">
+        <img src="" alt="">
+        <span></span>
+      </div>
+    </div>
 
   </div>
 </template>
