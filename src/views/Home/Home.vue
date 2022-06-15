@@ -50,15 +50,21 @@
       </div>
       <div class="grid_child">
         <div class="grid_left_div">
-          <img src="img/left.png" alt="">
+          <router-link to="/home">
+            <img src="img/left.png" alt="">
+          </router-link>
         </div>
         <div class="grid_right_div">
           <div class="right_div_1">
-            <img src="img/right.png" alt="">
+            <routerLink to="/shopping">
+              <img src="img/right.png" alt="">
+            </routerLink>
           </div>
           <div class="right_baojian">保健护理</div>
           <div class="right_div_2">
-            <img src="img/grid_left.PNG" alt="">
+            <router-link to="/supermarket">
+              <img src="img/grid_left.PNG" alt="">
+            </router-link>
           </div>
         </div>
       </div>
@@ -82,7 +88,7 @@ export default {
         this.value = ''
     };
 
-
+  // 轮播
     const images = [
       'img/swipe1.png',
       'img/swipe2.png',
@@ -93,10 +99,8 @@ export default {
     return {
       value,
       onSearch,
-
-      // 轮播
       images,
-      //刷新
+    
     };
   },
 
@@ -147,6 +151,6 @@ export default {
   }
 }
 </script>
-<style lang="less" scode>
+<style lang="less" scoped>
 @import url(./Home.less);
 </style>

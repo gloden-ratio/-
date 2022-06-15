@@ -17,21 +17,20 @@ export default {
  }
 }
 </script>
-<style lang="less" scode>
+<style lang="less" scoped>
+.van-nav-bar {
 
-.van-nav-bar{
-
- .van-nav-bar__title {
-  margin: 0 .3rem;
-  font-size: .48rem;
- }
+    .van-nav-bar__title {
+        margin: 0 .3rem;
+        font-size: .48rem;
+    }
 }
 
 
 :root {
     --van-nav-bar-title-text-color: "red";
- --van-line-height-lg: auto;
- --van-nav-bar-height: 1rem;
-// --van-background-color-light
+    --van-line-height-lg: auto;
+    --van-nav-bar-height: 1rem;
+    // --van-background-color-light
 }
 </style>
