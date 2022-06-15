@@ -44,17 +44,23 @@
       <img src="img/red_packet.PNG" alt="">
     </div>
     <div class="grid">
-      <div class="grid_div_1">
-        <img src="" alt="">
-        <span></span>
+      <div class="text">
+        <span>小猪外卖</span>
+        <span>美妆精选</span>
       </div>
-      <div class="grid_div_2">
-        <img src="" alt="">
-        <span></span>
-      </div>
-      <div class="grid_div_3">
-        <img src="" alt="">
-        <span></span>
+      <div class="grid_child">
+        <div class="grid_left_div">
+          <img src="img/left.png" alt="">
+        </div>
+        <div class="grid_right_div">
+          <div class="right_div_1">
+            <img src="img/right.png" alt="">
+          </div>
+          <div class="right_baojian">保健护理</div>
+          <div class="right_div_2">
+            <img src="img/grid_left.PNG" alt="">
+          </div>
+        </div>
       </div>
     </div>
 

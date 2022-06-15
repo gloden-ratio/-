@@ -2,11 +2,12 @@
     width     : 100%;
     height    : 100%;
     margin    : 1.3rem 0;
-    padding:0 .2rem 3rem .2rem;
+    padding : 0 .2rem 3rem .2rem;
     background: #fee4e2;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
+
     //搜索
     .van-search__content--round {
         padding-right: .2rem;
@@ -121,47 +122,75 @@
     }
 
     .grid {
-        width : 100%;
-        height: auto;
+        width         : 100%;
+        height        : max-content;
+        display       : flex;
+        font-size     : .5rem;
+        background    : #fff;
+        flex-direction: column;
+        padding       : .33rem;
+        border-radius : .35rem;
 
-        display          : flex;
-        // flex-wrap     : wrap;
-        // flex-direction: row-reverse;
+        .text {
+            width          : 100%;
+            height         : .78rem;
+            font-size      : .5rem;
+            display        : flex;
+            justify-content: space-between;
+            align-items    : baseline;
 
-        .grid_div_1 {
-
-            // width     : 48%;
-            // height    : 4rem;
-            background: red;
-
-            img {
-                width : 40%;
-                height: 8rem;
+            span {
+                line-height: .78rem;
             }
-        }
-
-        .grid_div_2 {
-            background   : yellowgreen;
-            // width     : 50%;
-            // height    : 3rem;
-
-            img {
-                width : 5.92rem;
-                height: 4.3rem;
             }
-        }
 
-        .grid_div_3 {
-            background   : rgb(49, 56, 35);
-            // width     : 50%;
-            // height    : 3rem;
+            .grid_child {
+                display           : flex;
+                // justify-content: space-between;
+                flex-direction    : row;
+                box-sizing        : border-box;
+                overflow          : hidden;
 
-            img {
-                width : 5.92rem;
-                height: 4.3rem;
+                .grid_left_div {
+                    flex: 1;
+
+                img {
+                    width : 2.94rem;
+                    height: 5rem;
+                    }
+                    }
+
+                .grid_right_div {
+                    flex          : 1;
+                    display       : flex;
+                    flex-direction: column;
+                    align-items   : flex-end;
+                    box-sizing    : border-box;
+                    overflow      : hidden;
+
+                    .right_div_1 {
+                        width: 100%;
+                        img {
+                    width : 2.94rem;
+                    height: 2.15rem;
+                    }
+                    }
+
+                .right_baojian {
+                    width: 100%;
+                }
+
+                .right_div_2 {
+                    width: 100%;
+                     img {
+                    width : 2.94rem;
+                    height: 2.15rem;
+                    }
+                    }
             }
         }
     }
+
 
 }
 
