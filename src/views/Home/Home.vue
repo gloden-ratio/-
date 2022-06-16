@@ -56,7 +56,7 @@
         </div>
         <div class="grid_right_div">
           <div class="right_div_1">
-            <routerLink to="/shopping">
+            <routerLink to="/shoppingCar">
               <img src="img/right.png" alt="">
             </routerLink>
           </div>
@@ -73,7 +73,9 @@
   </div>
 </template>
 <script>
-import { ref, computed } from 'vue';
+import { ref, onMounted,reactive } from 'vue';
+import getSwiper from "../../quest/date/home";
+
 export default {
 
   setup() {
@@ -88,34 +90,31 @@ export default {
         this.value = ''
     };
 
+     
   // 轮播
-    const images = [
-      'img/swipe1.png',
-      'img/swipe2.png',
-      'img/swipe3.png',
-    ];
+  const  images=[
+    "img/swipe1.png",
+    "img/swipe2.png",
+    "img/swipe3.png",
+    ]
+
+
 
 
     return {
       value,
       onSearch,
       images,
-    
-    };
-  },
 
-  data() {
-    return {
+
       //通知
       color: '#040303',
       background: "#fee4e2",
+
       meg: {
         xx: "无论我们能活多久，我们能够享受的只有无法分割的此刻.",
         ss: "及时答复基石无人机地顶起。",
       },
-      color: "#040303",
-      background: "#fee4e2",
-
       //icon
       lists: [
 
@@ -135,22 +134,10 @@ export default {
         ]
       ]
     }
-
   },
-
-  methods: {
-    // git_img(value) {
-
-    //   return new URL(`../../assets/${value}`, import.meta.url).href;
-    // }
-
-    xx() {
-      console.log('xx');
-    }
-
-  }
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 @import url(./Home.less);
 </style>
+
