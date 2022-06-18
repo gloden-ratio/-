@@ -24,10 +24,11 @@
     </ul>
     <!-- 轮播 -->
     <van-swipe :autoplay="3000" lazy-render>
-      <van-swipe-item v-for="image in images" :key="image" width="200">
+      <van-swipe-item v-for="image in sdf.images" :key="image" width="200">
         <router-link to="/">
-          <img :src="image" />
+          <img :src="image.download_url" />
         </router-link>
+
       </van-swipe-item>
     </van-swipe>
 
@@ -73,6 +74,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 import { ref, onMounted,reactive } from 'vue';
 import getSwiper from "../../quest/date/home";
 
@@ -92,19 +94,24 @@ export default {
 
      
   // 轮播
-  const  images=[
-    "img/swipe1.png",
-    "img/swipe2.png",
-    "img/swipe3.png",
-    ]
+    var sdf=reactive({images:[
 
+    ]})
+    
 
+    onMounted(async () => {
+      let res = await getSwiper()
+      sdf.images = res.data
+      // console.log(res.data);
+
+    });
 
 
     return {
       value,
       onSearch,
-      images,
+      // images,
+      sdf,     
 
 
       //通知
@@ -135,7 +142,9 @@ export default {
       ]
     }
   },
-}
+};
+
+
 </script>
 <style lang="less">
 @import url(./Home.less);

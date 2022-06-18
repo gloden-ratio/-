@@ -4,7 +4,7 @@ import instance from "../quest";
 export default function getSwiper(){
 
     return instance({
-        url:'/swipe',
+        url:'/v2/list',
         method:"GET",
     })
 }
