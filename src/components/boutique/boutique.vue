@@ -1,71 +1,87 @@
 <template>
-    <div id="boutiqu" >
-        <div class="item">
+    <div id="boutiqu">
+        <div class="item" v-for="item, index in productList.leftList">
             <div class="item_left">
-                <img src="" alt="">
+                <van-image lazy-load width="100%" height="3.4rem" :src="item.download_url">
+                </van-image>
+
                 <div class="item_left_xx">
                     <div class="item_left_title">
                         <span>
-                            【14/16】桂圆红枣...
+                            {{ item.author }}
                         </span>
                         <span>
-                            Longyan Red Dates Brown Su...
+                            {{ item.height }}
                         </span>
                     </div>
                     <span class="item_left_title_price">
-                        <span>$1.99</span>
+                        <span>${{ item.width }}</span>
                         <span>+</span>
                     </span>
                 </div>
             </div>
+
             <div class="item_reight">
-                <img src="" alt="">
+                <van-image width="100%" height="3.4rem" lazy-load :src="item.download_url">
+                </van-image>
+
                 <div class="item_right_xx">
                     <div class="item_reight_title">
                         <span>
-                            【14/16】桂圆红枣...
+                            {{ item.author }}
                         </span>
                         <span>
-                            Longyan Red Dates Brown Su...
+                            {{ item.width }}
                         </span>
                     </div>
                     <span class="item_reight_title_price">
-                        <span>$1.99</span>
+                        <span>{{ item.height }}</span>
                         <span>+</span>
                     </span>
                 </div>
             </div>
+
         </div>
     </div>
 
 </template>
 <script>
-import { onMounted, ref, reactive } from "vue";
-import { getSwiper } from "../../quest/date/home";
+import { getBoutique } from "../../quest/date/home";
+import { defineComponent, onMounted, ref, reactive } from "vue";
 
-export default {
+export default defineComponent({
 
-    set() {
+    setup(prpos, context) {
 
-        let url = "v2/list?page=2&limit=100";
-        let img_list = reactive({ url: [] });
+        let productList = reactive({ leftList: [], right: [] });
 
         onMounted(async () => {
-            let res = await getSwiper(url)
-            img_list.url = res.data
-            console.log(url);
+
+            let URL = [
+                { url: "/v2/list?page=2&limit=10", method: 'get', },
+                { url: "/v2/list?page=2&limit=15", method: 'GET' }]
+
+            URL.forEach(async (item) => {
+                let res = await getBoutique(item)
+                console.log(res.data);
+                productList.leftList = res.data
+                productList.right = res.data
+            })
+
 
         })
 
 
         return {
-            img_list,
+            // img_list,
+            productList,
+
 
         }
     }
 
 
-}
+})
 
 
 </script>

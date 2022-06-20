@@ -77,9 +77,9 @@
   </div>
 </template>
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import { ref, onMounted,reactive,defineComponent } from 'vue';
-import getSwiper from "../../quest/date/home";
+import { getSwiper } from "../../quest/date/home";
 import boutique from "../../components/boutique/boutique";
 
 export default defineComponent({
@@ -101,19 +101,19 @@ setup() {
   // 轮播
     var sdf=reactive({images:[
 
-    ]})
-    onMounted(
-      async () => {
-      let URL= {url:'/v2/list',method:'get'}
-      let res = await getSwiper(URL )
+    ]
+    })
+  onMounted(
+    async () => {
+      let URL = { url: '/v2/list', method: 'get' }
+      let res = await getSwiper(URL)
       sdf.images = res.data
-      console.log(res.data);
-      },
-    );
-      // const active = ref(0);
+      // console.log(res);
+    },
+  );
+  const active = ref(0);
+
     // title 数据 
-   
-    
     
     return {
       value,
