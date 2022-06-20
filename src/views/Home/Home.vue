@@ -57,7 +57,7 @@
         </div>
         <div class="grid_right_div">
           <div class="right_div_1">
-            <routerLink to="/shoppingCar">
+            <routerLink to="/shoppingCart">
               <img src="img/right.png" alt="">
             </routerLink>
           </div>
@@ -70,20 +70,25 @@
         </div>
       </div>
     </div>
+    <!-- title -->
+    <boutique></boutique>
+
 
   </div>
 </template>
 <script>
 import axios from 'axios';
-import { ref, onMounted,reactive } from 'vue';
+import { ref, onMounted,reactive,defineComponent } from 'vue';
 import getSwiper from "../../quest/date/home";
+import boutique from "../../components/boutique/boutique";
 
-export default {
+export default defineComponent({
+  
+  components:{
+    boutique
+  },
 
-  setup() {
-
-    //下拉刷新  
-
+setup() {
 
     //搜索
     const value = ref('');
@@ -97,16 +102,19 @@ export default {
     var sdf=reactive({images:[
 
     ]})
-    
-
-    onMounted(async () => {
-      let res = await getSwiper()
+    onMounted(
+      async () => {
+      let URL= {url:'/v2/list',method:'get'}
+      let res = await getSwiper(URL )
       sdf.images = res.data
-      // console.log(res.data);
-
-    });
-
-
+      console.log(res.data);
+      },
+    );
+      // const active = ref(0);
+    // title 数据 
+   
+    
+    
     return {
       value,
       onSearch,
@@ -141,9 +149,9 @@ export default {
         ]
       ]
     }
-  },
-};
+  }
 
+})
 
 </script>
 <style lang="less">

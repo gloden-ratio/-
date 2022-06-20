@@ -1,12 +1,13 @@
 import instance from "../quest";
 
 
-export default function getSwiper(){
-
+export default function getSwiper(url){
+   
     return instance({
-        url:'/v2/list',
-        method:"GET",
+        url:url.url,
+        method:url.method
     })
+   
 }
 
 

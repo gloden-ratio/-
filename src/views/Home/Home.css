@@ -87,6 +87,7 @@
   flex-direction: column;
   padding: 0.33rem;
   border-radius: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 #home .grid .text {
   width: 100%;
@@ -136,6 +137,10 @@
 #home .grid .grid_child .grid_right_div .right_div_2 img {
   width: 2.94rem;
   height: 2.15rem;
+}
+#home .van-tab {
+  background-color: #fde4e2;
+  font-size: 0.3rem;
 }
 :root {
   --van-search-padding: 0rem 0 0.2rem 0;

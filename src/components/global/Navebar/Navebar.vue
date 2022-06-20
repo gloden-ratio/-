@@ -16,7 +16,7 @@ export default {
         <van-tabbar-item replace to="/home" icon="graphic">首页</van-tabbar-item>
         <van-tabbar-item replace to="/takeOut" dot icon="shop">外卖</van-tabbar-item>
         <van-tabbar-item replace to="/supermarket" icon="shop-collect">商超</van-tabbar-item>
-        <van-tabbar-item replace to="/shoppingCar" badge="5" icon="shopping-cart">购物车</van-tabbar-item>
+        <van-tabbar-item replace to="/shoppingCart" badge="5" icon="shopping-cart">购物车</van-tabbar-item>
         <van-tabbar-item replace to="/my" icon="setting">我的</van-tabbar-item>
     </van-tabbar>
 </template>
