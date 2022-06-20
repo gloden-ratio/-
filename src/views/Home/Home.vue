@@ -24,10 +24,11 @@
     </ul>
     <!-- 轮播 -->
     <van-swipe :autoplay="3000" lazy-render>
-      <van-swipe-item v-for="image in images" :key="image" width="200">
+      <van-swipe-item v-for="image in sdf.images" :key="image" width="200">
         <router-link to="/">
-          <img :src="image" />
+          <img :src="image.download_url" />
         </router-link>
+
       </van-swipe-item>
     </van-swipe>
 
@@ -56,7 +57,7 @@
         </div>
         <div class="grid_right_div">
           <div class="right_div_1">
-            <routerLink to="/shoppingCar">
+            <routerLink to="/shoppingCart">
               <img src="img/right.png" alt="">
             </routerLink>
           </div>
@@ -69,19 +70,25 @@
         </div>
       </div>
     </div>
+    <!-- title -->
+    <boutique></boutique>
+
 
   </div>
 </template>
 <script>
-import { ref, onMounted,reactive } from 'vue';
+import axios from 'axios';
+import { ref, onMounted,reactive,defineComponent } from 'vue';
 import getSwiper from "../../quest/date/home";
+import boutique from "../../components/boutique/boutique";
 
-export default {
+export default defineComponent({
+  
+  components:{
+    boutique
+  },
 
-  setup() {
-
-    //下拉刷新  
-
+setup() {
 
     //搜索
     const value = ref('');
@@ -92,19 +99,27 @@ export default {
 
      
   // 轮播
-  const  images=[
-    "img/swipe1.png",
-    "img/swipe2.png",
-    "img/swipe3.png",
-    ]
+    var sdf=reactive({images:[
 
-
-
-
+    ]})
+    onMounted(
+      async () => {
+      let URL= {url:'/v2/list',method:'get'}
+      let res = await getSwiper(URL )
+      sdf.images = res.data
+      console.log(res.data);
+      },
+    );
+      // const active = ref(0);
+    // title 数据 
+   
+    
+    
     return {
       value,
       onSearch,
-      images,
+      // images,
+      sdf,     
 
 
       //通知
@@ -134,8 +149,10 @@ export default {
         ]
       ]
     }
-  },
-}
+  }
+
+})
+
 </script>
 <style lang="less">
 @import url(./Home.less);

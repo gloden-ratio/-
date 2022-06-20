@@ -16,7 +16,6 @@
 import Navebar from './components/global/Navebar/Navebar'
 
 import Spec from "./components/global/Spec/Spec";
-
 export default {
 
   data() {
@@ -36,11 +35,22 @@ export default {
 </script>
 <style  lang="less">
 
+
+@import url("../public/css/iconfont.css");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -62,9 +72,6 @@ html {
       // padding: 0 .2rem;
       box-sizing: border-box;
       overflow: hidden;
-
-
-
     }
   }
 
