@@ -1,24 +1,38 @@
 <template>
     <div id="supermarket">
-        supermarket
+        <div class="bar">
+            <h2>
+                超市购物
+            </h2>
+        </div>
+        <seek></seek>
+
+
+
+        <van-skeleton title :row="30" :row-width="rowWidth" v-if="0" />
     </div>
-
 </template>
+<script>
+import {ref,reactive,defineComponent} from 'vue'
+import seek from '../../components/global/seek/seek'
+export default defineComponent({
+    components: {
+        seek,
+    },
+    setup() {
 
+        let rowWidth = [340, 340, 340, 340, 340, 340, 340,]
+
+        return {
+            rowWidth,
+        }
+    }
+})
+
+</script>
 <style lang="less" scoped>
 
 
-
-#supermarket {
-    width: 100%;
-    height: 100%;
-    margin: 1.3rem 0;
-        padding: 0 .2rem 3rem .2rem;
-        background: #fee4e2;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: auto;
-    
-    }
+@import url('./supermarket.less');
 </style>
  

@@ -6,5 +6,10 @@ const instance = axios.create({
     headers: {'X-Custom-Header': 'foobar'}
   });
 
-
-  export default instance 
+const mm = axios.create({
+  
+  baseURL: 'https://api.thecatapi.com/v1/images/search',
+  timeout: 1000,
+  headers: {'X-Custom-Header': 'foobar'}
+})
+  export { instance,mm} 

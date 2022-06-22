@@ -2,45 +2,46 @@
     <div id="boutiqu">
         <div class="item" v-for="item, index in productList.leftList">
             <div class="item_left">
-                <van-image lazy-load width="100%" height="3.4rem" :src="item.download_url">
-                </van-image>
-
-                <div class="item_left_xx">
-                    <div class="item_left_title">
-                        <span>
-                            {{ item.author }}
-                        </span>
-                        <span>
-                            {{ item.height }}
+                <router-link to="/s">
+                    <van-image lazy-load width="100%" height="3.4rem" :src="item.download_url">
+                    </van-image>
+                    <div class="item_left_xx">
+                        <div class="item_left_title">
+                            <span>
+                                {{ item.author }}
+                            </span>
+                            <span>
+                                {{ item.height }}
+                            </span>
+                        </div>
+                        <span class="item_left_title_price">
+                            <span>${{ item.width }}</span>
+                            <span>+</span>
                         </span>
                     </div>
-                    <span class="item_left_title_price">
-                        <span>${{ item.width }}</span>
-                        <span>+</span>
-                    </span>
-                </div>
+                </router-link>
             </div>
-
             <div class="item_reight">
-                <van-image width="100%" height="3.4rem" lazy-load :src="item.download_url">
-                </van-image>
+                <router-link to='/commodityDetails'>
 
-                <div class="item_right_xx">
-                    <div class="item_reight_title">
-                        <span>
-                            {{ item.author }}
-                        </span>
-                        <span>
-                            {{ item.width }}
+                    <van-image width="100%" height="3.4rem" lazy-load :src="item.download_url">
+                    </van-image>
+                    <div class="item_right_xx">
+                        <div class="item_reight_title">
+                            <span>
+                                {{ item.author }}
+                            </span>
+                            <span>
+                                {{ item.width }}
+                            </span>
+                        </div>
+                        <span class="item_reight_title_price">
+                            <span>{{ item.height }}</span>
+                            <span>+</span>
                         </span>
                     </div>
-                    <span class="item_reight_title_price">
-                        <span>{{ item.height }}</span>
-                        <span>+</span>
-                    </span>
-                </div>
+                </router-link>
             </div>
-
         </div>
     </div>
 
@@ -51,7 +52,8 @@ import { defineComponent, onMounted, ref, reactive } from "vue";
 
 export default defineComponent({
 
-    setup(prpos, context) {
+
+    setup(props, context) {
 
         let productList = reactive({ leftList: [], right: [] });
 
@@ -60,6 +62,7 @@ export default defineComponent({
             let URL = [
                 { url: "/v2/list?page=2&limit=10", method: 'get', },
                 { url: "/v2/list?page=2&limit=15", method: 'GET' }]
+
 
             URL.forEach(async (item) => {
                 let res = await getBoutique(item)

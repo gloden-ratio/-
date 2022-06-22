@@ -1,6 +1,5 @@
 <template>
   <!-- 头 -->
-  <Spec></Spec>
 
   <router-view></router-view>
 
@@ -9,22 +8,24 @@
   <Navebar></Navebar>
 
   <!-- 开启底部安全区适配 -->
-  <van-number-keyboard safe-area-inset-bottom />
+  <!-- <van-number-keyboard safe-area-inset-bottom /> -->
 </template>
 
 <script>
 import Navebar from './components/global/Navebar/Navebar'
 
-import Spec from "./components/global/Spec/Spec";
+// import Spec from "./components/global/Spec/Spec";
 export default {
 
   data() {
     return {
-      Navebar, Spec
+      Navebar,
+      // Spec
     }
   },
   components: {
-    Navebar, Spec
+    Navebar,
+    // Spec
   }
 
 }
@@ -35,13 +36,14 @@ export default {
 </script>
 <style  lang="less">
 
-
 @import url("../public/css/iconfont.css");
 
 * {
   margin: 0;
   padding: 0;
+  border: 0;
   box-sizing: border-box;
+
 
 }
 
@@ -58,8 +60,10 @@ html {
   height: 100%;
   overflow: hidden;
   overflow: -moz-hidden-unscrollable;
+  font-size: 0;
 
   body {
+    font-size: 0;
     width: 100%;
     height: 100%;
     background: #fee4e2;
