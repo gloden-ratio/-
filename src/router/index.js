@@ -17,6 +17,7 @@ history:createWebHashHistory(),
   {path:'/takeOut',component:()=>import ("../views/takeOut/takeOut.vue")},
   {path:'/shoppingCart',component:()=>import ("../views/shoppingCart/shoppingCart.vue")},
   {path:'/my',component:()=>import ("../views/my/my.vue")},
+  {path:'/commodityDetails',component:()=>import('../views/commodityDetails/commodityDetails.vue')}
   
   
  ]

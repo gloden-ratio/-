@@ -1,0 +1,119 @@
+#takeOut {
+  width: 100%;
+  height: 100%;
+  padding: 0.65rem 0 1.7rem 0;
+  background: #fea947;
+  box-sizing: border-box;
+}
+#takeOut .head {
+  display: block;
+  line-height: 0.83rem;
+  text-align: center;
+  font-size: 0.31rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+#takeOut .title {
+  width: 100%;
+  height: 100%;
+  padding: 1.7rem 0.2rem 1.3rem 0.2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #fff;
+}
+#takeOut .title .title_img {
+  border-radius: 0.56rem;
+  width: 7rem;
+  height: 2.17rem;
+  position: fixed;
+  top: 1.49rem;
+  left: 0.2rem;
+  right: 0.2rem;
+}
+#takeOut .title .sadfj {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#takeOut .title .sadfj .list {
+  padding-top: 0.6rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0.2rem 0.3rem 0.3rem 0.3rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+}
+#takeOut .title .sadfj .list .van-nav-bar {
+  width: 100%;
+  position: fixed;
+  top: 3.7rem;
+}
+#takeOut .title .sadfj .list .van-pull-refresh {
+  padding-top: 1rem;
+}
+#takeOut .title .sadfj .list .list_item {
+  display: flex;
+  flex-direction: row;
+}
+#takeOut .title .sadfj .list .list_item .list_item_img {
+  font-size: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#takeOut .title .sadfj .list .list_item .list_item_img img {
+  display: block;
+  object-fit: fill;
+  height: 100%;
+  width: 1.51rem;
+  flex: 1;
+}
+#takeOut .title .sadfj .list .list_item .list_item_text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#takeOut .title .sadfj .list .list_item .list_item_text .list_item_text_new {
+  flex: 1;
+  font-size: 0.4rem;
+  color: #323132;
+  padding: 0.1rem 0;
+  text-align: left;
+}
+#takeOut .title .sadfj .list .list_item .list_item_text .list_item_text_tow {
+  flex: 1;
+  padding: 0.1rem 0;
+  font-size: 0.35rem;
+  color: #a2a2a2;
+  text-align: left;
+}
+#takeOut .title .sadfj .list .list_item .list_item_text .list_item_text_price {
+  flex: 1;
+  padding: 0.1rem 0;
+  display: flex;
+  align-items: center;
+}
+#takeOut .title .sadfj .list .list_item .list_item_text .list_item_text_price span:nth-child(2) {
+  flex: 1;
+  display: inline;
+  font-size: 0.45rem;
+  color: #c7c7c7;
+  text-align: right;
+}
+#takeOut .title .sadfj .list .list_item .list_item_text .list_item_text_price span:nth-child(1) {
+  color: red;
+  font-size: 0.35rem;
+}

@@ -1,0 +1,166 @@
+#takeOut {
+    width           : 100%;
+    height          : 100%;
+    // margin    : 1.3rem 0;
+    padding         : .65rem 0 1.7rem 0;
+    background      : #fea947;
+    box-sizing      : border-box;
+    // overflow-x   : hidden;
+    // overflow-y   : auto;
+
+    .head {
+        display      : block;
+        line-height  : .83rem;
+        text-align   : center;
+        font-size    : .31rem;
+        color        : #fff;
+        margin-bottom: .6rem;
+    }
+
+    .title {
+        width     : 100%;
+        height    : 100%;
+        padding   : 1.7rem .2rem 1.3rem .2rem;
+        box-sizing: border-box;
+        overflow  : hidden;
+        text-align: center;
+        position  : relative;
+        left      : 0;
+        right     : 0;
+        bottom    : 0;
+        top       : 0;
+        background: #fff;
+
+
+
+        .title_img {
+            border-radius: .56rem;
+            width        : 7rem;
+            height       : 2.17rem;
+            position     : fixed;
+            top          : 1.49rem;
+            left         : .2rem;
+            right        : .2rem;
+        }
+
+        .sadfj {
+            width         : 100%;
+            height        : 100%;
+            display       : flex;
+            // align-items: baseline;
+
+            .list {
+                padding-top: .6rem;
+                position   : relative;
+                top        : 0;
+                left       : 0;
+                right      : 0;
+                bottom     : 0;
+
+                .van-nav-bar {
+                    width   : 100%;
+                    position: fixed;
+                    top     : 3.7rem;
+
+                }
+
+                .van-pull-refresh {
+                    padding-top: 1rem;
+                }
+
+                width     : 100%;
+                height    : 100%;
+                box-sizing: border-box;
+                padding   : .2rem .3rem .3rem .3rem;
+                overflow-x: hidden;
+                position  : relative;
+                top       : 0;
+                left      : 0;
+                right     : 0;
+                bottom    : 0;
+                overflow-x: hidden;
+
+
+
+
+
+                .list_item {
+                    display       : flex;
+                    flex-direction: row;
+
+                    .list_item_img {
+                        font-size : 0;
+                        box-sizing: border-box;
+                        overflow  : hidden;
+
+                        img {
+
+                            display   : block;
+                            object-fit: fill;
+                            height    : 100%;
+                            width     : 1.51rem;
+                            flex      : 1;
+                        }
+
+                    }
+
+                    .list_item_text {
+                        flex          : 2;
+                        display       : flex;
+                        flex-direction: column;
+                        padding       : 0 .2rem;
+                        white-space   : nowrap;
+                        text-overflow : ellipsis;
+
+                        .list_item_text_new {
+                            flex      : 1;
+                            font-size : .4rem;
+                            color     : #323132;
+                            padding   : .1rem 0;
+                            text-align: left;
+
+                        }
+
+                        .list_item_text_tow {
+                            flex      : 1;
+                            padding   : .1rem 0;
+                            font-size : .35rem;
+                            color     : #a2a2a2;
+                            text-align: left;
+
+                        }
+
+                        .list_item_text_price {
+                            flex       : 1;
+                            padding    : .1rem 0;
+                            display    : flex;
+                            align-items: center;
+
+                            span:nth-child(2) {
+                                flex      : 1;
+                                display   : inline;
+                                font-size : .45rem;
+                                color     : #c7c7c7;
+                                text-align: right;
+                            }
+
+                            span:nth-child(1) {
+                                color    : red;
+                                font-size: .35rem;
+                            }
+                        }
+
+
+
+
+                    }
+
+
+                }
+            }
+        }
+
+    }
+
+
+}

@@ -1,5 +1,13 @@
-import instance from "../quest";
+import{ instance,mm} from "../quest";
 
+
+function getTuaData(url){
+
+    return mm({
+        url:url.url,
+        method:"get"
+    })
+};
 
 
  function getBoutique(url){
@@ -9,7 +17,7 @@ import instance from "../quest";
     })
     
         
-}
+};
 
  function getSwiper (url){
     return  instance({
@@ -21,4 +29,4 @@ import instance from "../quest";
 
 
 
-export { getBoutique,getSwiper}
+export { getBoutique,getSwiper,getTuaData}

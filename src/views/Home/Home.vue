@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-
+    <Spec></Spec>
     <!-- 搜索 -->
     <form action="/">
       <van-search v-model="value" input-align="center" shape="round" placeholder="请输入搜索关键词" @search="onSearch" clearable
@@ -71,55 +71,58 @@
       </div>
     </div>
     <!-- title -->
-    <boutique></boutique>
-
-
+    <TUA></TUA>
   </div>
 </template>
 <script>
 // import axios from 'axios';
-import { ref, onMounted,reactive,defineComponent } from 'vue';
+import { ref, onMounted, reactive, defineComponent } from 'vue';
+import { Toast } from 'vant'
 import { getSwiper } from "../../quest/date/home";
-import boutique from "../../components/boutique/boutique";
-
+import Spec from "../../components/global/Spec/Spec";
+import TUA from "../../components/TUA/TUA";
 export default defineComponent({
-  
-  components:{
-    boutique
+
+  components: {
+    TUA, Spec
   },
 
-setup() {
+  setup() {
 
     //搜索
-    const value = ref('');
-    const onSearch = (val) => {
-      Toast(val),
+    let placeholder = '请输入搜索内容'
+    const value = ref(placeholder);
+    const onSearch = (value) => {
+      Toast(value),
         this.value = ''
     };
 
-     
-  // 轮播
-    var sdf=reactive({images:[
 
-    ]
+    // 轮播
+    var sdf = reactive({
+      images: [
+
+      ]
     })
-  onMounted(
-    async () => {
-      let URL = { url: '/v2/list', method: 'get' }
-      let res = await getSwiper(URL)
-      sdf.images = res.data
-      // console.log(res);
-    },
-  );
-  const active = ref(0);
+    onMounted(
+      async () => {
+        let URL = { url: '/v2/list', method: 'get' }
+        let res = await getSwiper(URL)
+        sdf.images = res.data
+        // console.log(res);
+      },
+    );
+    const active = ref(0);
 
     // title 数据 
-    
+
     return {
       value,
       onSearch,
       // images,
-      sdf,     
+      sdf,
+
+
 
 
       //通知
